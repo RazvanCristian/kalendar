@@ -126,6 +126,9 @@ export default {
       if(new Date(day_ends) < time_obj || time_obj < new Date(day_starts)) return null;
 
       let distance = (time_obj - new Date(day_starts)) / 1000 / 60;
+      if (distance < 0) 
+        distance = 0; 
+      
       return {distance, time};
     }
   },
